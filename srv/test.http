@@ -1,0 +1,9 @@
+GET http://localhost:4004/odata/v4/employee/t2joqu2qxbx8husj
+
+###
+POST http://localhost:4004/odata/v4/employee/CrNynAetTbHNHqn3
+Content-Type: application/json
+
+{
+    "XkXwXp4nCf5azs0U":"{\"Employees\":[{\"ID\":1,\"NAME\":\"Deependra\"}]}"
+}

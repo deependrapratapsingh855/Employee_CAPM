@@ -1,0 +1,12 @@
+PROCEDURE "CreateEmployee"( 
+   IN ID INTEGER,
+   IN NAME NVARCHAR(200)
+)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   -- READS SQL DATA 
+   AS
+BEGIN
+   INSERT INTO Employee Values(:ID,:NAME);
+END
