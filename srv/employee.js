@@ -1,6 +1,6 @@
 const cds = require('@sap/cds');
 let oInput,tx;
-// test commit
+// test
 module.exports = cds.service.impl(function (){
 
     //Employee
@@ -16,8 +16,6 @@ module.exports = cds.service.impl(function (){
                 result = await tx.run(`CALL "CreateEmployee"(?,?)`,[aEmployee[i].ID,aEmployee[i].NAME]);
                 console.log(result);
             }
-            // tx.commit();
-
             returnObj = {
                 "Success":"Employee is added successfully."
             };
