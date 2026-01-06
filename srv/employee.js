@@ -10,10 +10,10 @@ module.exports = cds.service.impl(function (){
             payload = req.data;
             oInput = JSON.parse(payload.XkXwXp4nCf5azs0U); 
             const aEmployee = oInput.Employees;
-            tx = cds.transaction(req); 
+            // tx = cds.transaction(req); 
 
             for(let i=0;i<aEmployee.length;i++){
-                result = await tx.run(`CALL "CreateEmployee"(?,?)`,[aEmployee[i].ID,aEmployee[i].NAME]);
+                result = await cds.db.run(`CALL "CreateEmployee"(?)`,[aEmployee[i].ID,aEmployee[i].NAME]);
                 console.log(result);
             }
             returnObj = {
@@ -23,14 +23,10 @@ module.exports = cds.service.impl(function (){
             return JSON.stringify(returnObj);
         }
         catch(error){
-            if (tx) {
-                await tx.rollback();
-            }
             return req.error({
                 code: 500, 
                 message: error.toString() 
             });
-
         }
     })
 

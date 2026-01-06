@@ -13,15 +13,15 @@ cds.on("bootstrap", (app) => {
 
   // using spawn processEmailQueue function will execute every minute
   // currently it is 60000ms means 1 minute
-  cds.spawn({ every: 60000 }, async () => {
-    try {
+  // cds.spawn({ every: 60000 }, async () => {
+  //   try {
       
-      console.log('Total CPI process Time:')
+  //     console.log('Total CPI process Time:')
       
-    } catch (err) {
-      console.error("Job error:", err);
-    }
-  });
+  //   } catch (err) {
+  //     console.error("Job error:", err);
+  //   }
+  // });
 });
 
 module.exports = cds.server;

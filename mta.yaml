@@ -17,6 +17,7 @@ modules:
     parameters:
       instances: 1
       buildpack: nodejs_buildpack
+      memory: 100M
     build-parameters:
       builder: npm-ci
     provides:
